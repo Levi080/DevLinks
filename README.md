@@ -1,4 +1,4 @@
 # DevLinks
 DevLinks é apenas um projetinho web. 
 
-Nele contém uma página web com links que redireciona para as minhas redes sociais.
+Nele, há uma página web com links que redirecionam para as minhas redes sociais.

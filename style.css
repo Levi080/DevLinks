@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --text-color: white;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light{
+    --text-color: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --switch-bg-url: url(./assets/sun.svg);
+}
+
+body{
+    /*Modo tradicional*/
+
+    /* background-image: url(./assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center; preenche a imagem do top da tela para o eixo x
+    background-size: cover; Faz com que a imagem se adapte ao tamanho da tela, se ela diminuir a imagem vai junto, ou se aumentar ela aumenta junto. Ou seja, o cover cobre todo espaço visivel  */
+
+    /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+    /*Modo agrupado (shorthand)*/
+    background: var(--bg-url) no-repeat top center/cover;
+}
+body * {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+#container{
+    width: 360px;
+    margin: 56px auto 0px;
+    padding: 0 24px;
+}
+
+#profile {
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img {
+    display: block; /*algumas propriedades são automaticamente "inline", ou seja todo conteúdo na mesma linha, o Margin: Auto; não pega quando é inline, por isso devemos usar o display: block; para que seja ocupado todo espaço da linha*/
+    width: 112px;
+    margin: auto;
+}
+
+#profile p {
+    font-weight: 400;
+    line-height: 35px;
+}
+
+#switch{
+    position: relative;
+    width: 64px;
+    margin: 20px auto;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    right: 0;
+    z-index: 1;
+}
+
+.light #switch button{
+    right: 0;
+    left: initial;
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background:  rgb(202, 170, 170);/*var(--suface-color)*/
+    border: 1px solid white; /*var(--stroker-color)*/
+    border-radius: 9999px;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /*Espaçamento entre os elementos*/ 
+}
+
+ul li a{
+    border: 1px solid rgb(202, 170, 170);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(4px); /*Cria uma "neblina" */
+    text-decoration: none;
+
+    transition: background 0.5s; /* Transition serve para que a cada vez que for carregado a página ou transicionar ela irá carregar esse style no tempo definido*/
+}
+
+/*":hover" aplica essa estilização quando o mouse está em cima do elemento*/
+ul li a:hover{
+    background: rgb(255, 255, 255, 0.05);
+    border: 1.5px solid var(--text-color);
+}
+
+#social-links{
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+    font-size: 24px;
+}
+
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 50%;
+
+    transition: background 0.2s;
+}
+
+#social-links a:hover {
+    background: rgb(255, 255, 255, 0.2);
+}
+
+footer{
+    padding: 24px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+

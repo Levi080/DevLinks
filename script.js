@@ -15,6 +15,6 @@ function toggleMode() {
     if(html.classList.contains('light')){
         img.setAttribute("src", "./assets/avatar-levi-praia.png")
     }else{
-        img.setAttribute("src", "./assets/avatar-levi-praia.png")
+        img.setAttribute("src", "./assets/avatar-levi-office.png")
     }
 }
